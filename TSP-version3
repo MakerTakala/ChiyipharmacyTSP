@@ -1,0 +1,41 @@
+#include <iostream>
+#include <stack>
+#include <math.h>
+using namespace std;
+
+#define N 4  //N nodes including headquarter
+
+float DataBase[N][N] = {
+
+
+
+
+};
+
+float MiniLengthDataBase[N][(1<<(N))-1] = {{0}};//[startpalce][visitplace]
+
+bool UsedNode[N] = {false}:
+stack<int> VisitNodeRecorder;
+
+void chooseNode(int startnode, int quantity){
+
+
+
+
+
+}
+
+int main()
+{
+    for(int i = 1; i < N; i++){
+        MiniLengthDataBase[i][1<<0] = DataBase[i][0];
+    }
+    for(int startnode = 1; startnode < N; startnode++){
+        for(int quantity = 1; quantity <N-1; quantity++){
+            chooseNode(startnode, quantity);
+        }
+    }
+
+
+return 0;
+}
