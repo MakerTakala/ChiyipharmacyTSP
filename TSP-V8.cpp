@@ -45,12 +45,13 @@ int main() {
     for ( int i = 0; i < N; i++ ){
         float MIN = FLT_MAX;
         for ( int j = 0; j < N; j++ ){
-            if( X != j && ( route & ( 1 << j ) ) && ( MIN >= dp[ route - ( 1 << j ) - ( 1 << X ) ][ j ] + graph[ X ][ j ] ) ){
-                MIN = dp[ route - ( 1 << j ) - ( 1 << X ) ][ j ] + graph[ X ][ j ];
+            if( X != j && ( route & ( 1 << j ) ) && ( MIN >= dp[ route - ( 1 << X ) ][ j ] + graph[ X ][ j ] ) ){
+                MIN = dp[ route - ( 1 << X ) ][ j ] + graph[ X ][ j ];
                 XN = j;
             }
         }
-        cout<<X<<" "<<endl;
+        cout<<dp[ route - ( 1 << X ) ][ XN ]<<" "<<graph[ X ][ XN ]<<" ";
+        cout<< X <<" "<<endl;
         route -= (1<<X);
         X = XN;
     }
