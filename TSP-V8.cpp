@@ -50,8 +50,7 @@ int main() {
                 XN = j;
             }
         }
-        cout<<dp[ route - ( 1 << X ) ][ XN ]<<" "<<graph[ X ][ XN ]<<" ";
-        cout<< X <<" "<<endl;
+        cout<< X <<" ";
         route -= (1<<X);
         X = XN;
     }
